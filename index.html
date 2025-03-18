@@ -5,16 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Age Calculator</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div class="container">
     <h1>Age Calculator</h1>
-    <label for="dob">Enter Your Date of Birth:</label>
-    <input type="date" id="dob" />
-    <button id="calculateBtn">Calculate Age</button>
+    <p>Calculate your age by entering your birthdate below.</p>
+    <br>
+    <label for="birthdate">Enter your birthdate:</label>
+    <br />
+    <input type="date" id="birthdate" />
+    <button id="calculate">Calculate Age</button>
     <div id="result"></div>
   </div>
 
+
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+    <p id="mode-label">Light Mode</p>
+  </div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>

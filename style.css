@@ -1,50 +1,146 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  background-color: white;
-  padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: rgb(252, 250, 250);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   text-align: center;
+  width: 550px;
 }
 
-input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: large;
-  border: 2px ;
-  border-radius: 8px;
+.container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="date"] {
   padding: 10px;
-  margin: 10px 0;
-  cursor: pointer;
-  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 60%;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #4CAF50;
-  color: white;
+  color: rgb(240, 230, 230);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 #result {
   margin-top: 20px;
   font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
 }
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toggle Switch Style */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark Mode Styling */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark .container {
+  background-color: #1e1e1e;
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.1);
+}
+
+body.dark #result {
+  color: white;
+}
+
+
+
+
+
+
+
+
 
 
 /* Responsive design for tablets */
@@ -72,3 +168,7 @@ button:hover {
     font-size: small;
   }
 }
+
+
+
+
